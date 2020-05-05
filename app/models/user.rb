@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
   # ユーザーをフォローする
   def follow(user_id)
-    follower.create(followed_id: user_id)
+    follower.create!(followed_id: user_id)
   end
 
   # ユーザーのフォローを外す
@@ -31,4 +31,5 @@ class User < ApplicationRecord
   def following?(user)
     following_user.include?(user)
   end
+
 end
