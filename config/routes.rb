@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'home/about'
 
   resources :users,only: [:show,:index,:edit,:update] do
+    get 'follower' => 'users#follower'
+    get 'followed' => 'users#followed'
     resource :relationships, only: [:create, :destroy]
   end
   resources :books do

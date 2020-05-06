@@ -1,0 +1,15 @@
+<table class="table">
+	<tbody>
+		<h2>Follow Users</h2>
+		<% @user.each do |user| %>
+		<tr>
+			<td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, fallback: "no-image-mini.jpg" %></td>
+			<td><%= user.name%></td>
+			<td><span>フォロー数:</span><%= user.follower.count %></td>
+			<td><span>フォロワー数:</span><%= user.followed.count %></td>
+			<td><%= render 'relationships/follow', user: user %></td>
+			<td><%= link_to "Show", user, class: "user_#{user.id}" %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

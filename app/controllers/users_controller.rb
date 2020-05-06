@@ -27,6 +27,16 @@ class UsersController < ApplicationController
   	end
   end
 
+# フォローしている人とフォローされている人の見極め方が分からない
+  def followed
+    @user = current_user.followed(params[:user_id])
+  end
+
+  def follower
+    @user = current_user.follower(params[:user_id])
+  end
+  # フォローしている人とフォローされている人の見極め方が分からない
+
   private
   
   def user_params
