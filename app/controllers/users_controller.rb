@@ -30,11 +30,12 @@ class UsersController < ApplicationController
 # フォローしている人とフォローされている人の見極め方が分からない
   def followed
     @user = User.find(params[:user_id])
-    @users = @user.following_user
+    @users = @user.follower_user
   end
 
   def follower
     @user = User.find(params[:user_id])
+    @users = @user.following_user
     @users = @user.follower_user
   end
   # フォローしている人とフォローされている人の見極め方が分からない
