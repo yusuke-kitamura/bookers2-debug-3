@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'home#top'
   get 'home/about'
-  get 'search' => 'searches#search'
+  get '/search' => 'searches#search'
 
   resources :users,only: [:show,:index,:edit,:update] do
     get 'follower' => 'users#follower'

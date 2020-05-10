@@ -33,7 +33,7 @@ class User < ApplicationRecord
     following_user.include?(user)
   end
 
-  # コントローラーからきた2つの値を受け取るため引数は2つ
+  # コントローラーからきた3つの値を受け取るため引数は3つ
   def User.search(search, user_or_book, how_search)
     if user_or_book == "1"
       if how_search == "1"
