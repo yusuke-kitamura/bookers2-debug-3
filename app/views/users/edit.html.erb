@@ -33,3 +33,22 @@
 </div>
 
 <% end %>
+
+<div id='map'></div>
+
+<style>
+#map{
+  height: 400px;
+  width: 600px;
+}
+</style>
+
+<script>
+function initMap(){
+  let map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: 34.470413, lng: 135.426278},
+  zoom: 8
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK4-e6C4U9nNBgu0hPvMkoB4SoRqDaRrI&callback=initMap" async defer></script>
